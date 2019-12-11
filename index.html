@@ -47,11 +47,20 @@
                     <hr>
                     <div id="estatísticas">
                             <h3>Estatísticas</h3>
-                            <p id="qtdPosts">Quantidade de Posts: </p>
-                            <p id="qtdAlbuns">Quantidade de albuns: {{getQuantidadeAlbunsUsuario()}}</p>
+                            <p id="qtdPosts">Quantidade de Posts: {{ qtdPosts }}</p>
+                            <p id="qtdAlbuns">Quantidade de albuns: {{ getQuantidadeAlbunsUsuario() }}</p>
                     </div>
                     <hr>
-
+                    <div id="albuns">
+                            <h3>Albuns</h3>
+                            <div v-for="n in albuns">
+                               <div class="album"></div>
+                                <h5>{{n.title}}</h5>
+                                <img src="https://via.placeholder.com/150/92c952}"/>
+                                <hr>
+                               </div>
+                           </div>
+                    </div>
 
 
             </div>
