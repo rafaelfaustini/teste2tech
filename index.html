@@ -20,9 +20,42 @@
             <div v-if="carregando">Carregando...</div>
 
             <div v-else>
-            <p>
-                {{ usuario.name }}
-            </p>
+
+            <div id="usuario">
+                    <h1>Perfil do usuário</h1>
+                    <p id="nome">Nome: {{ usuario.name }}</p>
+                    <p id="username">Username: {{ usuario.username }}</p>
+                    <p id="email">Email: {{ usuario.email }}</p>
+                    <p id="telefone">Telefone: {{ usuario.phone }}</p>
+                    <p id="website">Website: {{ usuario.website }}</p>
+                    <hr>
+                    <div id="endereco">
+                    <h2>Endereço</h2>
+                    <p id="rua">Rua: {{ usuario.address.street }}</p>
+                    <p id="complemento">Complemento: {{ usuario.address.suite }}</p>
+                    <p id="cidade">Cidade: {{ usuario.address.city }}</p>
+                    <p id="cep">Cep: {{ usuario.address.zipcode }}</p>
+                    </div>
+                    <hr>
+
+                    <div id="empresa">
+                        <h3>Empresa</h3>
+                        <p id="nome">Nome: {{ usuario.company.name }}</p>
+                        <p id="slogan">Slogan: {{ usuario.company.catchPhrase }}</p>
+                        <p id="bs">B.S: {{ usuario.company.bs }}</p>
+                    </div>
+                    <hr>
+                    <div id="estatísticas">
+                            <h3>Estatísticas</h3>
+                            <p id="qtdPosts">Quantidade de Posts: </p>
+                            <p id="qtdAlbuns">Quantidade de albuns: </p>
+                    </div>
+                    <hr>
+
+
+
+            </div>
+
         </div>
         </section>
     </div>
