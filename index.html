@@ -21,7 +21,7 @@
 
             <div v-else>
 
-            <div id="usuario">
+                <div id="usuario">
                     <h1>Perfil do usuário</h1>
                     <p id="nome">Nome: {{ usuario.name }}</p>
                     <p id="username">Username: {{ usuario.username }}</p>
@@ -30,11 +30,11 @@
                     <p id="website">Website: {{ usuario.website }}</p>
                     <hr>
                     <div id="endereco">
-                    <h2>Endereço</h2>
-                    <p id="rua">Rua: {{ usuario.address.street }}</p>
-                    <p id="complemento">Complemento: {{ usuario.address.suite }}</p>
-                    <p id="cidade">Cidade: {{ usuario.address.city }}</p>
-                    <p id="cep">Cep: {{ usuario.address.zipcode }}</p>
+                        <h2>Endereço</h2>
+                        <p id="rua">Rua: {{ usuario.address.street }}</p>
+                        <p id="complemento">Complemento: {{ usuario.address.suite }}</p>
+                        <p id="cidade">Cidade: {{ usuario.address.city }}</p>
+                        <p id="cep">Cep: {{ usuario.address.zipcode }}</p>
                     </div>
                     <hr>
 
@@ -46,27 +46,27 @@
                     </div>
                     <hr>
                     <div id="estatísticas">
-                            <h3>Estatísticas</h3>
-                            <p id="qtdPosts">Quantidade de Posts: {{ qtdPosts }}</p>
-                            <p id="qtdAlbuns">Quantidade de albuns: {{ getQuantidadeAlbunsUsuario() }}</p>
+                        <h3>Estatísticas</h3>
+                        <p id="qtdPosts">Quantidade de Posts: {{ qtdPosts }}</p>
+                        <p id="qtdAlbuns">Quantidade de albuns: {{ getQuantidadeAlbunsUsuario() }}</p>
                     </div>
                     <hr>
                     <div id="albuns">
-                            <h3>Albuns</h3>
-                            <div v-for="n in albuns">
-                               <div class="album"></div>
-                                <h5>{{n.title}}</h5>
-                                <img src="https://via.placeholder.com/150/92c952}"/>
-                                <hr>
-                               </div>
-                           </div>
+                        <h3>Albuns</h3>
+                        <div v-for="n in albuns">
+                            <div class="album"></div>
+                            <h5>{{n.title}}</h5>
+                            <img src="https://via.placeholder.com/150/92c952}" />
+                            <hr>
+                        </div>
                     </div>
+                </div>
 
 
             </div>
 
-        </div>
-        </section>
+    </div>
+    </section>
     </div>
 
 

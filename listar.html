@@ -19,20 +19,21 @@
         <section v-else>
             <div>
 
-            <div id="posts">
+                <div id="posts">
                     <div v-for="(n, i) in posts">
-                            <div class="album"></div>
-                             <h5>{{n.title}}</h5>
-                             <p>{{ users[i] }}</p>
-                             <hr>
-                        </div>
-            </div>
+                        <div class="album"></div>
+                        <h5>{{n.title}}</h5>
+                        <p>{{ users[i] }}</p>
+                        <button v-on:click="verMais(n.id)">Ver mais</button>
+                        <hr>
+                    </div>
+                </div>
 
 
             </div>
 
-        </div>
-        </section>
+    </div>
+    </section>
     </div>
 
 

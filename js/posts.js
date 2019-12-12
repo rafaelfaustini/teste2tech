@@ -23,25 +23,30 @@ var app = new Vue({
 
         },
 
-        getUsers: async function (){
-            for(var i=0; i< this.posts.length;i++){
-            id = this.posts[i].userId;
-            url = "https://jsonplaceholder.typicode.com/users?id="+id
-            await axios
-                .get(url)
+        verMais: function (n) {
+            localStorage.setItem("postid", n)
+            window.location.href = "detalhes.html";
+        },
 
-                .then(response => {
-                        if(response.data.length){
+        getUsers: async function () {
+            for (var i = 0; i < this.posts.length; i++) {
+                id = this.posts[i].userId;
+                url = "https://jsonplaceholder.typicode.com/users?id=" + id
+                await axios
+                    .get(url)
+
+                    .then(response => {
+                        if (response.data.length) {
                             this.users.push(response.data[0].username)
                         }
                     })
-                .catch(error => {
-                    console.log("Houve um erro")
-                    console.log(error)
-                    this.erro = true
-                })
-                .finally(() => { return true })
-                
+                    .catch(error => {
+                        console.log("Houve um erro")
+                        console.log(error)
+                        this.erro = true
+                    })
+                    .finally(() => { return true })
+
             }
         },
 
@@ -50,14 +55,14 @@ var app = new Vue({
                 .get(url)
 
                 .then(response => {
-                        for (var a in response.data){
-                            var p = response.data[a]
+                    for (var a in response.data) {
+                        var p = response.data[a]
 
-                            if(p.userId != localStorage.getItem("userid")){
-                                this.posts.push(p)
-                            }
+                        if (p.userId != localStorage.getItem("userid")) {
+                            this.posts.push(p)
                         }
-                    })
+                    }
+                })
                 .catch(error => {
                     console.log("Houve um erro")
                     console.log(error)
@@ -69,7 +74,7 @@ var app = new Vue({
 
     async mounted() {
         await this.checarDados()
-        if(!this.erro){
+        if (!this.erro) {
             var apiPost = "https://jsonplaceholder.typicode.com/posts"
             await this.getPosts(apiPost)
             await this.getUsers()
