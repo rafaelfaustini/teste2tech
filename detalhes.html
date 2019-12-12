@@ -5,34 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Perfil de Usuário</title>
+    <title>Post</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <div id="app">
+    <div id="app" class="container my-3">
 
-        <section v-if="erro">
+        <section v-if="erro" class="alert alert-danger m-2">
             <p>Perdão, houve um erro ao carregar as informações. Por favor tente mais tarde</p>
         </section>
 
         <section v-else>
-            <div v-if="carregando">Carregando...</div>
+            <div v-if="carregando" class="alert alert-warning m-2">Carregando...</div>
 
             <div v-else>
                 <div id="post">
-                    <h2>{{post.title}}</h1>
+                    <h1>{{post.title}}</h1>
+                    <p class="lead">
+                            por
+                            {{usuario.username}}
+                          </p>
                         <p>{{post.body}}</p>
                 </div>
                 <div id="comments">
                     <hr>
-                    <h3>Comentários dessa publicação</h5>
-                        <input style="width: 100%;" id="novocomment" />
-                        <button style="margin-top: 1%" v-on:click="criarComment">Comentar</button>
+                        <div class="card my-4">
+                                <h5 class="card-header">Deixa um comentário:</h5>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                      <textarea class="form-control" rows="3" id="novocomment"></textarea>
+                                    </div>
+                                    <button class="btn btn-primary" v-on:click="criarComment">Comentar</button>
+                                </div>
+                              </div>
+                    
                         <div v-for="n in comentarios">
                             <div class="album"></div>
                             <h4>{{n.name}}</h5>
-                                <h5>{{n.email}}</h5>
+                                <p class="lead">{{n.email}}</p>
                                 <p>{{n.body}}</p>
                                 <hr>
                         </div>
@@ -51,6 +64,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="js/detalhes.js"></script>
 
