@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Perfil de Usuário</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <section v-if="erro">
+            <p>Perdão, houve um erro ao carregar as informações. Por favor tente mais tarde</p>
+        </section>
+
+        <section v-else>
+            <div v-if="carregando">Carregando...</div>
+
+            <div v-else>
+                <div id="post">
+                    <h2>{{post.title}}</h1>
+                        <p>{{post.body}}</p>
+                </div>
+                <div id="comments">
+                    <hr>
+                    <h3>Comentários dessa publicação</h5>
+                        <input style="width: 100%;" id="novocomment" />
+                        <button style="margin-top: 1%" v-on:click="criarComment">Comentar</button>
+                        <div v-for="n in comentarios">
+                            <div class="album"></div>
+                            <h4>{{n.name}}</h5>
+                                <h5>{{n.email}}</h5>
+                                <p>{{n.body}}</p>
+                                <hr>
+                        </div>
+                </div>
+            </div>
+
+    </div>
+
+    </div>
+    </section>
+    </div>
+
+
+
+    <!-- biblioteca vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="js/detalhes.js"></script>
+
+</body>
+
+</html>
